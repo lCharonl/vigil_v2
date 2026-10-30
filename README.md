@@ -50,6 +50,7 @@ vigil_v2/
 | `QueueManager` | Enveloppe une `asyncio.Queue` bornée. `publish()` ne bloque jamais : si la file est pleine, l'événement est abandonné et compté dans `dropped`. |
 | `CertstreamClient` | Se connecte au WebSocket, reconnexion automatique, ignore les certificats CA, retire les `*.`, dédoublonne, publie un `CertEvent` par domaine. |
 | `DomainParser` | Retourne un `ParsedDomain` (`fqdn`, `subdomain`, `root`, `suffix`). Utilise la liste de suffixes embarquée de `tldextract`, sans accès réseau. |
+| Données | `src/data/brands_legits_domain.yaml` (marques et domaines officiels) est chargé une fois par `rules_brand.py` (heuristique `check_brand_in_subdomain`). `src/data/brands_typosquats.yaml`, généré par `scripts/generate_typosquats.py`, alimente `check_typosquatting`. |
 | `Scorer` | Applique chaque règle du registre, additionne les points, collecte les raisons. Une règle qui lève une exception est ignorée et journalisée. |
 | `AlertFormatter` / `AlertDispatcher` | Sérialisation JSON, puis écriture sur stdout et/ou dans un fichier (JSON Lines). |
 
@@ -67,7 +68,7 @@ La file bornée assure la contre-pression : le flux CertStream peut dépasser la
 
 - Python 3.10 ou supérieur
 - Un serveur CertStream compatible (format « lite » : `message_type`, `data.leaf_cert.all_domains`, etc.), par exemple une instance locale de [certstream-server-go](https://github.com/d-Rickyy-b/certstream-server-go)
-- Dépendances : `websockets`, `tldextract`
+- Dépendances : `websockets`, `tldextract`, `PyYAML`
 
 ## Installation et lancement
 
