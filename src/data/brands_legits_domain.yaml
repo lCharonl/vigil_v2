@@ -1,0 +1,1545 @@
+# Referentiel de marques et domaines officiels de reference.
+# Derive des 500 entrees de la liste precedente (doublons fusionnes).
+# Non exhaustif ; les domaines ne sont pas tous verifies independamment.
+# Ne pas utiliser comme liste blanche de securite sans validation specifique.
+# Les domaines listes peuvent appartenir a la meme maison mere.
+brands:
+- brand: Microsoft
+  domains:
+  - microsoft.com
+  - microsoftonline.com
+  - office.com
+  - live.com
+  - mcas.ms
+- brand: Microsoft 365
+  domains:
+  - microsoft365.com
+  - office.com
+  - office365.com
+- brand: Outlook
+  domains:
+  - outlook.com
+  - outlook.live.com
+- brand: Microsoft Entra
+  domains:
+  - microsoft.com
+- brand: OneDrive
+  domains:
+  - onedrive.live.com
+- brand: SharePoint
+  domains:
+  - sharepoint.com
+- brand: Microsoft Teams
+  domains:
+  - teams.microsoft.com
+- brand: Google
+  domains:
+  - google.com
+  - google.fr
+  - accounts.google.com
+- brand: Gmail
+  domains:
+  - gmail.com
+- brand: Google Drive
+  domains:
+  - drive.google.com
+- brand: Google Workspace
+  domains:
+  - workspace.google.com
+- brand: Google Cloud
+  domains:
+  - cloud.google.com
+- brand: Apple
+  domains:
+  - apple.com
+- brand: iCloud
+  domains:
+  - icloud.com
+- brand: Apple ID
+  domains:
+  - account.apple.com
+  - appleid.apple.com
+- brand: Dropbox
+  domains:
+  - dropbox.com
+- brand: Adobe
+  domains:
+  - adobe.com
+- brand: Adobe Acrobat
+  domains:
+  - adobe.com
+- brand: DocuSign
+  domains:
+  - docusign.com
+  - docusign.net
+- brand: WeTransfer
+  domains:
+  - wetransfer.com
+- brand: Box
+  domains:
+  - box.com
+- brand: Yahoo Mail
+  domains:
+  - mail.yahoo.com
+- brand: Proton Mail
+  domains:
+  - proton.me
+- brand: Zoho Mail
+  domains:
+  - zoho.com
+- brand: Zimbra
+  domains:
+  - zimbra.com
+- brand: Facebook
+  domains:
+  - facebook.com
+  - fb.com
+- brand: Instagram
+  domains:
+  - instagram.com
+- brand: WhatsApp
+  domains:
+  - whatsapp.com
+- brand: LinkedIn
+  domains:
+  - linkedin.com
+- brand: TikTok
+  domains:
+  - tiktok.com
+- brand: Snapchat
+  domains:
+  - snapchat.com
+- brand: X
+  domains:
+  - x.com
+- brand: Telegram
+  domains:
+  - telegram.org
+- brand: Discord
+  domains:
+  - discord.com
+- brand: Reddit
+  domains:
+  - reddit.com
+- brand: Pinterest
+  domains:
+  - pinterest.com
+- brand: Twitch
+  domains:
+  - twitch.tv
+- brand: YouTube
+  domains:
+  - youtube.com
+- brand: Messenger
+  domains:
+  - messenger.com
+- brand: Signal
+  domains:
+  - signal.org
+- brand: Skype
+  domains:
+  - skype.com
+- brand: Zoom
+  domains:
+  - zoom.us
+- brand: Slack
+  domains:
+  - slack.com
+- brand: Viber
+  domains:
+  - viber.com
+- brand: LINE
+  domains:
+  - line.me
+- brand: WeChat
+  domains:
+  - wechat.com
+- brand: Tumblr
+  domains:
+  - tumblr.com
+- brand: Threads
+  domains:
+  - threads.com
+  - threads.net
+- brand: Nextdoor
+  domains:
+  - nextdoor.com
+- brand: Quora
+  domains:
+  - quora.com
+- brand: Crédit Agricole
+  domains:
+  - credit-agricole.fr
+- brand: BNP Paribas
+  domains:
+  - mabanque.bnpparibas
+- brand: Société Générale
+  domains:
+  - particuliers.sg.fr
+- brand: La Banque Postale
+  domains:
+  - labanquepostale.fr
+- brand: Banque Populaire
+  domains:
+  - banquepopulaire.fr
+- brand: Caisse d'Épargne
+  domains:
+  - caisse-epargne.fr
+- brand: Crédit Mutuel
+  domains:
+  - creditmutuel.fr
+- brand: CIC
+  domains:
+  - cic.fr
+- brand: LCL
+  domains:
+  - lcl.fr
+- brand: BoursoBank
+  domains:
+  - boursobank.com
+  - clients.boursobank.com
+- brand: Fortuneo
+  domains:
+  - fortuneo.fr
+- brand: Hello bank!
+  domains:
+  - hellobank.fr
+- brand: Monabanq
+  domains:
+  - monabanq.com
+- brand: BforBank
+  domains:
+  - bforbank.com
+- brand: Nickel
+  domains:
+  - nickel.eu
+- brand: Crédit Coopératif
+  domains:
+  - credit-cooperatif.coop
+- brand: Banque Palatine
+  domains:
+  - palatine.fr
+- brand: HSBC
+  domains:
+  - hsbc.com
+- brand: Crédit Maritime
+  domains:
+  - creditmaritime.fr
+- brand: Banque Chalus
+  domains:
+  - banque-chalus.fr
+- brand: Banque Courtois
+  domains:
+  - sg.fr
+- brand: Banque Tarneaud
+  domains:
+  - sg.fr
+- brand: Banque Kolb
+  domains:
+  - sg.fr
+- brand: Crédit du Nord
+  domains:
+  - sg.fr
+- brand: Banque Transatlantique
+  domains:
+  - banquetransatlantique.com
+- brand: PayPal
+  domains:
+  - paypal.com
+  - paypal.me
+- brand: Revolut
+  domains:
+  - revolut.com
+- brand: N26
+  domains:
+  - n26.com
+- brand: Wise
+  domains:
+  - wise.com
+- brand: Monzo
+  domains:
+  - monzo.com
+- brand: Starling Bank
+  domains:
+  - starlingbank.com
+- brand: Barclays
+  domains:
+  - barclays.co.uk
+- brand: Lloyds Bank
+  domains:
+  - lloydsbank.com
+- brand: NatWest
+  domains:
+  - natwest.com
+- brand: Santander
+  domains:
+  - santander.com
+- brand: ING
+  domains:
+  - ing.com
+- brand: Deutsche Bank
+  domains:
+  - db.com
+- brand: Commerzbank
+  domains:
+  - commerzbank.com
+- brand: UBS
+  domains:
+  - ubs.com
+- brand: JPMorgan Chase
+  domains:
+  - chase.com
+- brand: Bank of America
+  domains:
+  - bankofamerica.com
+- brand: Wells Fargo
+  domains:
+  - wellsfargo.com
+- brand: Citibank
+  domains:
+  - citi.com
+- brand: Capital One
+  domains:
+  - capitalone.com
+- brand: American Express
+  domains:
+  - americanexpress.com
+- brand: Visa
+  domains:
+  - visa.com
+- brand: Mastercard
+  domains:
+  - mastercard.com
+- brand: Stripe
+  domains:
+  - stripe.com
+- brand: Klarna
+  domains:
+  - klarna.com
+- brand: Western Union
+  domains:
+  - westernunion.com
+- brand: La Poste
+  domains:
+  - laposte.fr
+  - laposte.net
+- brand: Chronopost
+  domains:
+  - chronopost.fr
+- brand: Colissimo
+  domains:
+  - laposte.fr
+- brand: Mondial Relay
+  domains:
+  - mondialrelay.fr
+- brand: DHL
+  domains:
+  - dhl.com
+- brand: UPS
+  domains:
+  - ups.com
+- brand: FedEx
+  domains:
+  - fedex.com
+- brand: GLS
+  domains:
+  - gls-group.com
+- brand: DPD
+  domains:
+  - dpd.com
+- brand: Colis Privé
+  domains:
+  - colisprive.fr
+- brand: Relais Colis
+  domains:
+  - relaiscolis.com
+- brand: TNT
+  domains:
+  - tnt.com
+- brand: USPS
+  domains:
+  - usps.com
+- brand: Royal Mail
+  domains:
+  - royalmail.com
+- brand: Evri
+  domains:
+  - evri.com
+- brand: Hermes Germany
+  domains:
+  - myhermes.de
+- brand: Canada Post
+  domains:
+  - canadapost-postescanada.ca
+- brand: Australia Post
+  domains:
+  - auspost.com.au
+- brand: Poste Italiane
+  domains:
+  - poste.it
+- brand: Correos
+  domains:
+  - correos.es
+- brand: Bpost
+  domains:
+  - bpost.be
+- brand: PostNL
+  domains:
+  - postnl.nl
+- brand: InPost
+  domains:
+  - inpost.pl
+- brand: Cainiao
+  domains:
+  - cainiao.com
+- brand: SF Express
+  domains:
+  - sf-express.com
+- brand: Impôts
+  domains:
+  - impots.gouv.fr
+- brand: Assurance Maladie
+  domains:
+  - ameli.fr
+- brand: CAF
+  domains:
+  - caf.fr
+- brand: Service-Public
+  domains:
+  - service-public.gouv.fr
+- brand: ANTAI
+  domains:
+  - antai.gouv.fr
+- brand: Amendes
+  domains:
+  - amendes.gouv.fr
+- brand: France Travail
+  domains:
+  - francetravail.fr
+- brand: URSSAF
+  domains:
+  - urssaf.fr
+- brand: FranceConnect
+  domains:
+  - franceconnect.gouv.fr
+- brand: France Titres
+  domains:
+  - ants.gouv.fr
+- brand: Info Retraite
+  domains:
+  - info-retraite.fr
+- brand: Assurance Retraite
+  domains:
+  - lassuranceretraite.fr
+- brand: Agirc-Arrco
+  domains:
+  - agirc-arrco.fr
+- brand: MSA
+  domains:
+  - msa.fr
+- brand: ANAH
+  domains:
+  - anah.gouv.fr
+- brand: France Rénov'
+  domains:
+  - france-renov.gouv.fr
+- brand: Mon Compte Formation
+  domains:
+  - moncompteformation.gouv.fr
+- brand: Ministère de l'Intérieur
+  domains:
+  - interieur.gouv.fr
+- brand: Ministère de la Justice
+  domains:
+  - justice.gouv.fr
+- brand: Gendarmerie nationale
+  domains:
+  - gendarmerie.interieur.gouv.fr
+- brand: Police nationale
+  domains:
+  - police-nationale.interieur.gouv.fr
+- brand: France Identité
+  domains:
+  - france-identite.gouv.fr
+- brand: Parcoursup
+  domains:
+  - parcoursup.gouv.fr
+- brand: Étudiant.gouv
+  domains:
+  - etudiant.gouv.fr
+- brand: Chorus Pro
+  domains:
+  - chorus-pro.gouv.fr
+- brand: Orange
+  domains:
+  - orange.fr
+  - orange.com
+- brand: SFR
+  domains:
+  - sfr.fr
+- brand: Free
+  domains:
+  - free.fr
+- brand: Bouygues Telecom
+  domains:
+  - bouyguestelecom.fr
+- brand: RED by SFR
+  domains:
+  - red-by-sfr.fr
+- brand: Sosh
+  domains:
+  - sosh.fr
+- brand: Prixtel
+  domains:
+  - prixtel.com
+- brand: NRJ Mobile
+  domains:
+  - nrjmobile.fr
+- brand: La Poste Mobile
+  domains:
+  - lapostemobile.fr
+- brand: Lebara
+  domains:
+  - lebara.fr
+- brand: Lycamobile
+  domains:
+  - lycamobile.fr
+- brand: Réglo Mobile
+  domains:
+  - reglomobile.fr
+- brand: Coriolis Télécom
+  domains:
+  - coriolis.com
+- brand: OVHcloud
+  domains:
+  - ovhcloud.com
+- brand: IONOS
+  domains:
+  - ionos.fr
+- brand: GoDaddy
+  domains:
+  - godaddy.com
+- brand: Gandi
+  domains:
+  - gandi.net
+- brand: Infomaniak
+  domains:
+  - infomaniak.com
+- brand: Cloudflare
+  domains:
+  - cloudflare.com
+  - workers.dev
+- brand: Verizon
+  domains:
+  - verizon.com
+- brand: AT&T
+  domains:
+  - att.com
+- brand: T-Mobile
+  domains:
+  - t-mobile.com
+- brand: Vodafone
+  domains:
+  - vodafone.com
+- brand: O2
+  domains:
+  - o2.co.uk
+- brand: EE
+  domains:
+  - ee.co.uk
+- brand: Amazon
+  domains:
+  - amazon.fr
+  - amazon.com
+  - amazonaws.com
+  - amazones.com
+  - aws.dev
+- brand: Azure
+  domains:
+  - azurecontainerapps.io
+  - azure-int.net
+  - azure.com
+  - azure.net
+
+- brand: eBay
+  domains:
+  - ebay.com
+  - ebay.fr
+- brand: AliExpress
+  domains:
+  - aliexpress.com
+- brand: Temu
+  domains:
+  - temu.com
+- brand: Shein
+  domains:
+  - shein.com
+- brand: Cdiscount
+  domains:
+  - cdiscount.com
+- brand: Fnac
+  domains:
+  - fnac.com
+- brand: Darty
+  domains:
+  - darty.com
+- brand: Rakuten
+  domains:
+  - rakuten.com
+- brand: Leboncoin
+  domains:
+  - leboncoin.fr
+- brand: Vinted
+  domains:
+  - vinted.fr
+- brand: Etsy
+  domains:
+  - etsy.com
+- brand: Back Market
+  domains:
+  - backmarket.fr
+- brand: Synology
+  domains:
+  - quickconnect.to
+- brand: ManoMano
+  domains:
+  - manomano.fr
+- brand: Rue du Commerce
+  domains:
+  - rueducommerce.fr
+- brand: Boulanger
+  domains:
+  - boulanger.com
+- brand: LDLC
+  domains:
+  - ldlc.com
+- brand: Materiel.net
+  domains:
+  - materiel.net
+- brand: Top Achat
+  domains:
+  - topachat.com
+- brand: Zalando
+  domains:
+  - zalando.fr
+- brand: ASOS
+  domains:
+  - asos.com
+- brand: Showroomprivé
+  domains:
+  - showroomprive.com
+- brand: Veepee
+  domains:
+  - veepee.fr
+- brand: La Redoute
+  domains:
+  - laredoute.fr
+- brand: Galeries Lafayette
+  domains:
+  - galerieslafayette.com
+- brand: Carrefour
+  domains:
+  - carrefour.fr
+- brand: E.Leclerc
+  domains:
+  - e.leclerc
+  - www.e.leclerc
+  - leclercdrive.fr
+- brand: Auchan
+  domains:
+  - auchan.fr
+- brand: Intermarché
+  domains:
+  - intermarche.com
+- brand: Lidl
+  domains:
+  - lidl.fr
+- brand: Aldi
+  domains:
+  - aldi.fr
+- brand: Monoprix
+  domains:
+  - monoprix.fr
+- brand: Franprix
+  domains:
+  - franprix.fr
+- brand: Casino
+  domains:
+  - casino.fr
+- brand: Super U
+  domains:
+  - magasins-u.com
+- brand: Picard
+  domains:
+  - picard.fr
+- brand: Grand Frais
+  domains:
+  - grandfrais.com
+- brand: Metro
+  domains:
+  - metro.fr
+- brand: Costco
+  domains:
+  - costco.com
+- brand: Walmart
+  domains:
+  - walmart.com
+- brand: Target
+  domains:
+  - target.com
+- brand: Tesco
+  domains:
+  - tesco.com
+- brand: Sainsbury's
+  domains:
+  - sainsburys.co.uk
+- brand: Morrisons
+  domains:
+  - groceries.morrisons.com
+- brand: Asda
+  domains:
+  - asda.com
+- brand: Colruyt
+  domains:
+  - colruyt.be
+- brand: Delhaize
+  domains:
+  - delhaize.be
+- brand: Albert Heijn
+  domains:
+  - ah.nl
+- brand: Coop Suisse
+  domains:
+  - coop.ch
+- brand: Migros
+  domains:
+  - migros.ch
+- brand: Netflix
+  domains:
+  - netflix.com
+- brand: Disney+
+  domains:
+  - disneyplus.com
+- brand: Prime Video
+  domains:
+  - primevideo.com
+- brand: Spotify
+  domains:
+  - spotify.com
+- brand: Deezer
+  domains:
+  - deezer.com
+- brand: Apple Music
+  domains:
+  - music.apple.com
+- brand: YouTube Music
+  domains:
+  - music.youtube.com
+- brand: Canal+
+  domains:
+  - canalplus.com
+- brand: Paramount+
+  domains:
+  - paramountplus.com
+- brand: HBO Max
+  domains:
+  - hbomax.com
+- brand: Hulu
+  domains:
+  - hulu.com
+- brand: Peacock
+  domains:
+  - peacocktv.com
+- brand: Crunchyroll
+  domains:
+  - crunchyroll.com
+- brand: DAZN
+  domains:
+  - dazn.com
+- brand: beIN SPORTS
+  domains:
+  - beinsports.com
+- brand: Molotov
+  domains:
+  - molotov.tv
+- brand: Arte
+  domains:
+  - arte.tv
+- brand: France.tv
+  domains:
+  - france.tv
+- brand: TF1+
+  domains:
+  - tf1.fr
+- brand: M6+
+  domains:
+  - m6.fr
+- brand: Audible
+  domains:
+  - audible.com
+- brand: SoundCloud
+  domains:
+  - soundcloud.com
+- brand: Tidal
+  domains:
+  - tidal.com
+- brand: Plex
+  domains:
+  - plex.tv
+- brand: Rakuten TV
+  domains:
+  - rakuten.tv
+- brand: Steam
+  domains:
+  - steampowered.com
+- brand: Epic Games
+  domains:
+  - epicgames.com
+- brand: PlayStation
+  domains:
+  - playstation.com
+- brand: Xbox
+  domains:
+  - xbox.com
+- brand: Nintendo
+  domains:
+  - nintendo.com
+- brand: Roblox
+  domains:
+  - roblox.com
+- brand: Riot Games
+  domains:
+  - riotgames.com
+- brand: League of Legends
+  domains:
+  - leagueoflegends.com
+- brand: Valorant
+  domains:
+  - playvalorant.com
+- brand: Battle.net
+  domains:
+  - battle.net
+- brand: Blizzard
+  domains:
+  - blizzard.com
+- brand: Ubisoft
+  domains:
+  - ubisoft.com
+- brand: EA
+  domains:
+  - ea.com
+- brand: EA Sports FC
+  domains:
+  - ea.com
+- brand: Rockstar Games
+  domains:
+  - rockstargames.com
+- brand: Minecraft
+  domains:
+  - minecraft.net
+- brand: Mojang
+  domains:
+  - mojang.com
+- brand: GOG
+  domains:
+  - gog.com
+- brand: Humble Bundle
+  domains:
+  - humblebundle.com
+- brand: King
+  domains:
+  - king.com
+- brand: Supercell
+  domains:
+  - supercell.com
+- brand: HoYoverse
+  domains:
+  - hoyoverse.com
+- brand: Wargaming
+  domains:
+  - wargaming.net
+- brand: Nexon
+  domains:
+  - nexon.com
+- brand: Square Enix
+  domains:
+  - square-enix.com
+- brand: Binance
+  domains:
+  - binance.com
+- brand: Coinbase
+  domains:
+  - coinbase.com
+- brand: Kraken
+  domains:
+  - kraken.com
+- brand: Crypto.com
+  domains:
+  - crypto.com
+- brand: OKX
+  domains:
+  - okx.com
+- brand: Bybit
+  domains:
+  - bybit.com
+- brand: Bitget
+  domains:
+  - bitget.com
+- brand: KuCoin
+  domains:
+  - kucoin.com
+- brand: Bitstamp
+  domains:
+  - bitstamp.net
+- brand: Gemini
+  domains:
+  - gemini.com
+- brand: Bitfinex
+  domains:
+  - bitfinex.com
+- brand: Ledger
+  domains:
+  - ledger.com
+- brand: Trezor
+  domains:
+  - trezor.io
+- brand: MetaMask
+  domains:
+  - metamask.io
+- brand: Trust Wallet
+  domains:
+  - trustwallet.com
+- brand: Phantom
+  domains:
+  - phantom.com
+- brand: Exodus
+  domains:
+  - exodus.com
+- brand: Blockchain.com
+  domains:
+  - blockchain.com
+- brand: Uniswap
+  domains:
+  - uniswap.org
+- brand: PancakeSwap
+  domains:
+  - pancakeswap.finance
+- brand: OpenSea
+  domains:
+  - opensea.io
+- brand: Magic Eden
+  domains:
+  - magiceden.io
+- brand: Aave
+  domains:
+  - aave.com
+- brand: Lido
+  domains:
+  - lido.fi
+- brand: CoinMarketCap
+  domains:
+  - coinmarketcap.com
+- brand: SNCF
+  domains:
+  - sncf-connect.com
+  - sncf.com
+- brand: OUIGO
+  domains:
+  - ouigo.com
+- brand: Eurostar
+  domains:
+  - eurostar.com
+- brand: Trainline
+  domains:
+  - thetrainline.com
+- brand: RATP
+  domains:
+  - ratp.fr
+- brand: Île-de-France Mobilités
+  domains:
+  - iledefrance-mobilites.fr
+- brand: BlaBlaCar
+  domains:
+  - blablacar.fr
+- brand: FlixBus
+  domains:
+  - flixbus.fr
+- brand: Uber
+  domains:
+  - uber.com
+- brand: Bolt
+  domains:
+  - bolt.eu
+- brand: Free Now
+  domains:
+  - free-now.com
+- brand: G7
+  domains:
+  - g7.fr
+- brand: Lime
+  domains:
+  - li.me
+- brand: Dott
+  domains:
+  - ridedott.com
+- brand: Vélib'
+  domains:
+  - velib-metropole.fr
+- brand: VINCI Autoroutes
+  domains:
+  - vinci-autoroutes.com
+- brand: Ulys
+  domains:
+  - ulys.com
+- brand: Sanef
+  domains:
+  - sanef.com
+- brand: Bip&Go
+  domains:
+  - bipandgo.com
+- brand: Fulli
+  domains:
+  - fulli.com
+- brand: Alamo
+  domains:
+  - alamo.com
+- brand: Europcar
+  domains:
+  - europcar.fr
+- brand: Hertz
+  domains:
+  - hertz.com
+- brand: Avis
+  domains:
+  - avis.fr
+- brand: Sixt
+  domains:
+  - sixt.fr
+- brand: Booking.com
+  domains:
+  - booking.com
+- brand: Airbnb
+  domains:
+  - airbnb.fr
+  - airbnb.com
+- brand: Expedia
+  domains:
+  - expedia.fr
+- brand: Hotels.com
+  domains:
+  - hotels.com
+- brand: Agoda
+  domains:
+  - agoda.com
+- brand: Tripadvisor
+  domains:
+  - tripadvisor.fr
+- brand: Trivago
+  domains:
+  - trivago.fr
+- brand: Kayak
+  domains:
+  - kayak.fr
+- brand: Skyscanner
+  domains:
+  - skyscanner.fr
+- brand: Lastminute
+  domains:
+  - lastminute.com
+- brand: eDreams
+  domains:
+  - edreams.fr
+- brand: Opodo
+  domains:
+  - opodo.fr
+- brand: Air France
+  domains:
+  - airfrance.fr
+- brand: Transavia
+  domains:
+  - transavia.com
+- brand: easyJet
+  domains:
+  - easyjet.com
+- brand: Ryanair
+  domains:
+  - ryanair.com
+- brand: Lufthansa
+  domains:
+  - lufthansa.com
+- brand: British Airways
+  domains:
+  - britishairways.com
+- brand: Emirates
+  domains:
+  - emirates.com
+- brand: Qatar Airways
+  domains:
+  - qatarairways.com
+- brand: Turkish Airlines
+  domains:
+  - turkishairlines.com
+- brand: Accor
+  domains:
+  - all.accor.com
+- brand: Marriott
+  domains:
+  - marriott.com
+- brand: Hilton
+  domains:
+  - hilton.com
+- brand: IHG
+  domains:
+  - ihg.com
+- brand: EDF
+  domains:
+  - edf.fr
+- brand: Engie
+  domains:
+  - engie.fr
+- brand: TotalEnergies
+  domains:
+  - totalenergies.fr
+- brand: Enedis
+  domains:
+  - enedis.fr
+- brand: GRDF
+  domains:
+  - grdf.fr
+- brand: Ekwateur
+  domains:
+  - ekwateur.fr
+- brand: Octopus Energy
+  domains:
+  - octopusenergy.fr
+- brand: Mint Énergie
+  domains:
+  - mint-energie.com
+- brand: Enercoop
+  domains:
+  - enercoop.fr
+- brand: Vattenfall
+  domains:
+  - vattenfall.fr
+- brand: Eni
+  domains:
+  - eni.com
+- brand: Iberdrola
+  domains:
+  - iberdrola.com
+- brand: E.ON
+  domains:
+  - eon.com
+- brand: British Gas
+  domains:
+  - britishgas.co.uk
+- brand: SSE
+  domains:
+  - sse.com
+- brand: Veolia
+  domains:
+  - veolia.com
+- brand: Suez
+  domains:
+  - suez.com
+- brand: Saur
+  domains:
+  - saur.com
+- brand: Eau de Paris
+  domains:
+  - eaudeparis.fr
+- brand: Izi by EDF
+  domains:
+  - izi-by-edf.fr
+- brand: HomeServe
+  domains:
+  - homeserve.fr
+- brand: Verisure
+  domains:
+  - verisure.fr
+- brand: Sector Alarm
+  domains:
+  - sectoralarm.fr
+- brand: Somfy
+  domains:
+  - somfy.fr
+- brand: Netatmo
+  domains:
+  - netatmo.com
+- brand: AXA
+  domains:
+  - axa.fr
+- brand: Allianz
+  domains:
+  - allianz.fr
+- brand: MAIF
+  domains:
+  - maif.fr
+- brand: MACIF
+  domains:
+  - macif.fr
+- brand: MAAF
+  domains:
+  - maaf.fr
+- brand: MMA
+  domains:
+  - mma.fr
+- brand: GMF
+  domains:
+  - gmf.fr
+- brand: Groupama
+  domains:
+  - groupama.fr
+- brand: Matmut
+  domains:
+  - matmut.fr
+- brand: Direct Assurance
+  domains:
+  - direct-assurance.fr
+- brand: L'olivier Assurance
+  domains:
+  - lolivier.fr
+- brand: April
+  domains:
+  - april.fr
+- brand: Swiss Life
+  domains:
+  - swisslife.fr
+- brand: Generali
+  domains:
+  - generali.fr
+- brand: Abeille Assurances
+  domains:
+  - abeille-assurances.fr
+- brand: Malakoff Humanis
+  domains:
+  - malakoffhumanis.com
+- brand: Harmonie Mutuelle
+  domains:
+  - harmonie-mutuelle.fr
+- brand: MGEN
+  domains:
+  - mgen.fr
+- brand: Alan
+  domains:
+  - alan.com
+- brand: AG2R La Mondiale
+  domains:
+  - ag2rlamondiale.fr
+- brand: CNP Assurances
+  domains:
+  - cnp.fr
+- brand: Crédit Agricole Assurances
+  domains:
+  - ca-assurances.com
+- brand: BNP Paribas Cardif
+  domains:
+  - bnpparibascardif.com
+- brand: MetLife
+  domains:
+  - metlife.com
+- brand: AIG
+  domains:
+  - aig.com
+- brand: Doctolib
+  domains:
+  - doctolib.fr
+- brand: Maiia
+  domains:
+  - maiia.com
+- brand: Qare
+  domains:
+  - qare.fr
+- brand: Livi
+  domains:
+  - livi.fr
+- brand: Medadom
+  domains:
+  - medadom.com
+- brand: Ramsay Santé
+  domains:
+  - ramsaysante.fr
+- brand: Elsan
+  domains:
+  - elsan.care
+- brand: Santéclair
+  domains:
+  - santeclair.fr
+- brand: Santé publique France
+  domains:
+  - santepubliquefrance.fr
+- brand: ANSM
+  domains:
+  - ansm.sante.fr
+- brand: HAS
+  domains:
+  - has-sante.fr
+- brand: Ordre des médecins
+  domains:
+  - conseil-national.medecin.fr
+- brand: Vidal
+  domains:
+  - vidal.fr
+- brand: Leem
+  domains:
+  - leem.org
+- brand: Pfizer
+  domains:
+  - pfizer.com
+- brand: Sanofi
+  domains:
+  - sanofi.com
+- brand: Moderna
+  domains:
+  - modernatx.com
+- brand: Roche
+  domains:
+  - roche.com
+- brand: Novartis
+  domains:
+  - novartis.com
+- brand: Bayer
+  domains:
+  - bayer.com
+- brand: AstraZeneca
+  domains:
+  - astrazeneca.com
+- brand: Johnson & Johnson
+  domains:
+  - jnj.com
+- brand: Medtronic
+  domains:
+  - medtronic.com
+- brand: Abbott
+  domains:
+  - abbott.com
+- brand: Philips Healthcare
+  domains:
+  - philips.com
+- brand: Salesforce
+  domains:
+  - salesforce.com
+  - crm.dev
+- brand: SAP
+  domains:
+  - sap.com
+  - ondemand.com
+- brand: Oracle
+  domains:
+  - oracle.com
+- brand: Workday
+  domains:
+  - workday.com
+- brand: ServiceNow
+  domains:
+  - servicenow.com
+- brand: Atlassian
+  domains:
+  - atlassian.com
+- brand: Jira
+  domains:
+  - atlassian.com
+- brand: Confluence
+  domains:
+  - atlassian.com
+- brand: Notion
+  domains:
+  - notion.so
+- brand: Asana
+  domains:
+  - asana.com
+- brand: Trello
+  domains:
+  - trello.com
+- brand: Monday.com
+  domains:
+  - monday.com
+- brand: ClickUp
+  domains:
+  - clickup.com
+- brand: HubSpot
+  domains:
+  - hubspot.com
+- brand: Zendesk
+  domains:
+  - zendesk.com
+- brand: Freshworks
+  domains:
+  - freshworks.com
+- brand: Intuit
+  domains:
+  - intuit.com
+- brand: QuickBooks
+  domains:
+  - quickbooks.intuit.com
+- brand: Sage
+  domains:
+  - sage.com
+- brand: Cegid
+  domains:
+  - cegid.com
+- brand: PayFit
+  domains:
+  - payfit.com
+- brand: ADP
+  domains:
+  - adp.com
+- brand: Deel
+  domains:
+  - deel.com
+- brand: Indeed
+  domains:
+  - indeed.com
+- brand: Glassdoor
+  domains:
+  - glassdoor.com
+- brand: Nike
+  domains:
+  - nike.com
+- brand: Adidas
+  domains:
+  - adidas.fr
+- brand: Puma
+  domains:
+  - puma.com
+- brand: New Balance
+  domains:
+  - newbalance.fr
+- brand: Decathlon
+  domains:
+  - decathlon.fr
+- brand: Intersport
+  domains:
+  - intersport.fr
+- brand: Foot Locker
+  domains:
+  - footlocker.fr
+- brand: JD Sports
+  domains:
+  - jdsports.fr
+- brand: Courir
+  domains:
+  - courir.com
+- brand: Zara
+  domains:
+  - zara.com
+- brand: H&M
+  domains:
+  - hm.com
+- brand: Uniqlo
+  domains:
+  - uniqlo.com
+- brand: Mango
+  domains:
+  - mango.com
+- brand: Kiabi
+  domains:
+  - kiabi.com
+- brand: Primark
+  domains:
+  - primark.com
+- brand: Sephora
+  domains:
+  - sephora.fr
+- brand: Marionnaud
+  domains:
+  - marionnaud.fr
+- brand: Nocibé
+  domains:
+  - nocibe.fr
+- brand: Louis Vuitton
+  domains:
+  - louisvuitton.com
+- brand: Gucci
+  domains:
+  - gucci.com
+- brand: Dior
+  domains:
+  - dior.com
+- brand: Chanel
+  domains:
+  - chanel.com
+- brand: Hermès
+  domains:
+  - hermes.com
+- brand: Rolex
+  domains:
+  - rolex.com
+- brand: Cartier
+  domains:
+  - cartier.com
+- brand: SeLoger
+  domains:
+  - seloger.com
+- brand: Bien'ici
+  domains:
+  - bienici.com
+- brand: PAP
+  domains:
+  - pap.fr
+- brand: Logic-Immo
+  domains:
+  - logic-immo.com
+- brand: Orpi
+  domains:
+  - orpi.com
+- brand: Century 21
+  domains:
+  - century21.fr
+- brand: Foncia
+  domains:
+  - foncia.com
+- brand: Nexity
+  domains:
+  - nexity.fr
+- brand: Tesla
+  domains:
+  - tesla.com
+- brand: Renault
+  domains:
+  - renault.fr
+- brand: Peugeot
+  domains:
+  - peugeot.fr
+- brand: Citroën
+  domains:
+  - citroen.fr
+- brand: Volkswagen
+  domains:
+  - volkswagen.fr
+- brand: BMW
+  domains:
+  - bmw.fr
+- brand: Mercedes-Benz
+  domains:
+  - mercedes-benz.fr
+- brand: Toyota
+  domains:
+  - toyota.fr
+- brand: AutoScout24
+  domains:
+  - autoscout24.fr
+- brand: La Centrale
+  domains:
+  - lacentrale.fr
+- brand: Norauto
+  domains:
+  - norauto.fr
+- brand: Feu Vert
+  domains:
+  - feuvert.fr
+- brand: Oscaro
+  domains:
+  - oscaro.com
+- brand: Autodoc
+  domains:
+  - autodoc.fr
+- brand: Tesla Energy
+  domains:
+  - tesla.com
+- brand: ChatGPT
+  domains:
+  - chatgpt.com
+  - chatgpt.sites
+  - chatgpt.site
+
