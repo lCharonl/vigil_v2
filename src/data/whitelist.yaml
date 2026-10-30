@@ -1,0 +1,7 @@
+# Regex whitelist: any FQDN matching one of these patterns is never scored.
+# Case-insensitive, applied with re.search on the FQDN: anchor with ^ and $.
+# Use single quotes so backslashes are kept as-is.
+version: 1
+patterns:
+# Microsoft Defender for Cloud Apps session proxy (admin-mcas.ms, mcas-df.ms, rs-mcas.ms...)
+- '(^|\.)(admin-)?(rs-)?mcas(-df)?\.ms$'

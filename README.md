@@ -102,3 +102,16 @@ Tant que les heuristiques sont vides, tous les scores valent 0 et aucune alerte 
 
 - Aucun commentaire `#` dans le corps du code ; documentation par docstrings uniquement.
 - Une heuristique retourne toujours un tuple `(score, raison)`.
+
+## Liste blanche (regex)
+
+`src/data/whitelist.yaml` contient des expressions régulières : un FQDN qui en correspond à une n'est jamais scoré (score 0, aucune règle exécutée). Les regex sont insensibles à la casse et appliquées avec `re.search` : ancrez-les avec `^` et `$`.
+
+```yaml
+patterns:
+- '(^|\.)(admin-)?(rs-)?mcas(-df)?\.ms$'
+```
+
+Une regex invalide interrompt le démarrage avec un message indiquant le motif fautif. Un autre fichier peut être fourni avec `--whitelist chemin.yaml`.
+
+La liste blanche est globale. Pour un domaine officiel d'une marque, préférez ajouter le domaine dans `src/data/brands_legits_domain.yaml`, puis relancer `python scripts/generate_typosquats.py` pour exclure aussi ses variantes de TLD.

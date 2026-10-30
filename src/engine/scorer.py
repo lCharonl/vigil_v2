@@ -7,6 +7,7 @@ from dataclasses import dataclass, field
 from src.core.queue_manager import CertEvent
 from src.engine.domain_parser import DomainParser, ParsedDomain
 from src.engine import rules_brand, rules_context
+from src.engine.whitelist import Whitelist
 
 logger = logging.getLogger(__name__)
 
@@ -43,15 +44,19 @@ class Scorer:
         threshold: int = 50,
         rules: Sequence[Rule] = DEFAULT_RULES,
         parser: DomainParser | None = None,
+        whitelist: Whitelist | None = None,
     ) -> None:
         self.threshold = threshold
         self._rules = tuple(rules)
         self._parser = parser or DomainParser()
+        self._whitelist = whitelist if whitelist is not None else Whitelist.from_file()
 
     def evaluate(self, event: CertEvent) -> ScoreResult:
-        """Score an event with every rule."""
+        """Score an event with every rule; whitelisted domains score 0."""
         parsed = self._parser.parse(event.domain)
         result = ScoreResult(event=event, parsed=parsed)
+        if self._whitelist.matches(event.domain):
+            return result
 
         for rule in self._rules:
             try:

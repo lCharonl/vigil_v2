@@ -7,6 +7,7 @@ import logging
 from src.core.queue_manager import QueueManager
 from src.engine.rules_brand import load_brand_index, load_typosquat_index
 from src.engine.scorer import Scorer
+from src.engine.whitelist import Whitelist
 from src.ingestion.certstream_ws import DEFAULT_URL, CertstreamClient
 from src.output.dispatcher import AlertDispatcher
 from src.output.formatter import AlertFormatter
@@ -45,7 +46,7 @@ async def run(args: argparse.Namespace) -> None:
     await asyncio.to_thread(load_brand_index)
     await asyncio.to_thread(load_typosquat_index)
     queue = QueueManager(maxsize=args.queue_size)
-    scorer = Scorer(threshold=args.threshold)
+    scorer = Scorer(threshold=args.threshold, whitelist=Whitelist.from_file(args.whitelist))
     formatter = AlertFormatter()
     dispatcher = AlertDispatcher(file_path=args.output_file)
     client = CertstreamClient(queue, url=args.url)
@@ -75,6 +76,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Vigil V2 - phishing detection from the CertStream feed")
     parser.add_argument("--url", default=DEFAULT_URL, help="CertStream server URL")
     parser.add_argument("--threshold", type=int, default=50, help="minimum score to raise an alert")
+    parser.add_argument("--whitelist", default=None, help="YAML file of whitelist regexes")
     parser.add_argument("--output-file", default=None, help="JSON Lines output file")
     parser.add_argument("--queue-size", type=int, default=10000, help="queue capacity")
     parser.add_argument("--workers", type=int, default=1, help="number of engine consumers")
