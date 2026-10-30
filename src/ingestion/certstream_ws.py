@@ -44,7 +44,7 @@ class CertstreamClient:
                 await self._consume()
             except (OSError, websockets.ConnectionClosed) as exc:
                 logger.warning(
-                    "Connexion perdue (%s), nouvelle tentative dans %ss",
+                    "Connection lost (%s), retrying in %ss",
                     exc,
                     self._reconnect_delay,
                 )
@@ -53,7 +53,7 @@ class CertstreamClient:
     async def _consume(self) -> None:
         """Open the connection and publish events until it drops."""
         async with websockets.connect(self._url) as ws:
-            logger.info("Connecté à %s", self._url)
+            logger.info("Connected to %s", self._url)
             async for raw in ws:
                 for event in self.parse_message(raw):
                     self._queue.publish(event)

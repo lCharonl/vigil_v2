@@ -82,7 +82,7 @@ class Scorer:
             try:
                 points, reason = rule(parsed, event)
             except Exception:
-                logger.exception("Règle %s en échec sur %s", rule.__name__, event.domain)
+                logger.exception("Rule %s failed on %s", rule.__name__, event.domain)
                 continue
             if points == 0:
                 continue

@@ -34,7 +34,7 @@ async def engine_worker(
             if scorer.is_suspicious(result):
                 await dispatcher.dispatch(formatter.to_json(result))
         except Exception:
-            logger.exception("Échec de traitement pour %s", event.domain)
+            logger.exception("Processing failed for %s", event.domain)
         finally:
             queue.task_done()
 
@@ -48,7 +48,7 @@ async def stats_reporter(queue: QueueManager, interval: float) -> None:
     """
     while True:
         await asyncio.sleep(interval)
-        logger.info("file=%d abandonnés=%d", queue.qsize(), queue.dropped)
+        logger.info("queue=%d dropped=%d", queue.qsize(), queue.dropped)
 
 
 async def run(args: argparse.Namespace) -> None:
@@ -89,14 +89,14 @@ def parse_args() -> argparse.Namespace:
     Returns:
         The Vigil runtime parameters.
     """
-    parser = argparse.ArgumentParser(description="Vigil V2 - détection de phishing via CertStream")
-    parser.add_argument("--url", default=DEFAULT_URL, help="URL du serveur CertStream")
-    parser.add_argument("--threshold", type=int, default=50, help="score minimal d'alerte")
-    parser.add_argument("--output-file", default=None, help="fichier JSON Lines de sortie")
-    parser.add_argument("--queue-size", type=int, default=10000, help="capacité de la file")
-    parser.add_argument("--workers", type=int, default=1, help="nombre de consommateurs")
-    parser.add_argument("--stats-interval", type=float, default=60.0, help="période des stats (s)")
-    parser.add_argument("--verbose", action="store_true", help="active les logs DEBUG")
+    parser = argparse.ArgumentParser(description="Vigil V2 - phishing detection from the CertStream feed")
+    parser.add_argument("--url", default=DEFAULT_URL, help="CertStream server URL")
+    parser.add_argument("--threshold", type=int, default=50, help="minimum score to raise an alert")
+    parser.add_argument("--output-file", default=None, help="JSON Lines output file")
+    parser.add_argument("--queue-size", type=int, default=10000, help="queue capacity")
+    parser.add_argument("--workers", type=int, default=1, help="number of engine consumers")
+    parser.add_argument("--stats-interval", type=float, default=60.0, help="stats reporting interval (s)")
+    parser.add_argument("--verbose", action="store_true", help="enable DEBUG logs")
     return parser.parse_args()
 
 
@@ -110,7 +110,7 @@ def main() -> None:
     try:
         asyncio.run(run(args))
     except KeyboardInterrupt:
-        logger.info("Arrêt demandé")
+        logger.info("Shutdown requested")
 
 
 if __name__ == "__main__":
