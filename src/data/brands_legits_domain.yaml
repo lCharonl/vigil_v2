@@ -11,6 +11,11 @@ brands:
   - office.com
   - live.com
   - mcas.ms
+  - office.net
+  - cloud.microsoft
+  - powerplatform.com
+  - powerplatformusercontent.com
+  - dynamics.com
 - brand: Microsoft 365
   domains:
   - microsoft365.com
@@ -100,6 +105,7 @@ brands:
 - brand: WhatsApp
   domains:
   - whatsapp.com
+  - whatsapp.net
 - brand: LinkedIn
   domains:
   - linkedin.com
@@ -529,6 +535,7 @@ brands:
   domains:
   - cloudflare.com
   - workers.dev
+  - pages.dev
 - brand: Verizon
   domains:
   - verizon.com
@@ -554,13 +561,26 @@ brands:
   - amazonaws.com
   - amazones.com
   - aws.dev
+  - amazonaws.com.cn
+  - amazon.dev
+  - a2z.com
+  - a2z.eu
 - brand: Azure
   domains:
   - azurecontainerapps.io
   - azure-int.net
   - azure.com
   - azure.net
-
+  - azure.us
+  - azure.cn
+  - azure-api.net
+  - azurecontainerapps.us
+  - usgovcloudapi.net
+  - chinacloudapi.cn
+  - azurewebsites.net
+  - azureedge.net
+  - windows.net
+  - windows-int.net
 - brand: eBay
   domains:
   - ebay.com
@@ -601,6 +621,7 @@ brands:
 - brand: Synology
   domains:
   - quickconnect.to
+  - quickconnect.cn
 - brand: ManoMano
   domains:
   - manomano.fr
@@ -804,6 +825,7 @@ brands:
 - brand: Nintendo
   domains:
   - nintendo.com
+  - nintendo.net
 - brand: Roblox
   domains:
   - roblox.com
@@ -1320,6 +1342,7 @@ brands:
   domains:
   - salesforce.com
   - crm.dev
+  - force.com
 - brand: SAP
   domains:
   - sap.com
@@ -1513,9 +1536,11 @@ brands:
 - brand: Mercedes-Benz
   domains:
   - mercedes-benz.fr
+  - mercedes-benz.com
 - brand: Toyota
   domains:
   - toyota.fr
+  - toyota.com
 - brand: AutoScout24
   domains:
   - autoscout24.fr
@@ -1542,4 +1567,6 @@ brands:
   - chatgpt.com
   - chatgpt.sites
   - chatgpt.site
-
+- brand: Cisco
+  domains:
+  - cisco.com
