@@ -15,12 +15,11 @@ Rule = Callable[[ParsedDomain, CertEvent], tuple[int, str]]
 BRAND_RULES: tuple[Rule, ...] = (
     rules_brand.check_allowlist,
     rules_brand.check_typosquatting,
+    rules_brand.check_brand_in_subdomain,
 )
 
 CONTEXT_RULES: tuple[Rule, ...] = (
     rules_context.check_keywords,
-    rules_context.check_tld,
-    rules_context.check_certificate_authority,
 )
 
 DEFAULT_RULES: tuple[Rule, ...] = BRAND_RULES + CONTEXT_RULES
@@ -28,14 +27,7 @@ DEFAULT_RULES: tuple[Rule, ...] = BRAND_RULES + CONTEXT_RULES
 
 @dataclass(slots=True)
 class ScoreResult:
-    """Engine verdict for one event.
-
-    Attributes:
-        event: Event that was analyzed.
-        parsed: Parsed domain.
-        score: Sum of the points of all triggered rules.
-        reasons: Reasons provided by the rules that returned a non-zero score.
-    """
+    """Engine verdict: total ``score`` and the ``reasons`` behind it."""
 
     event: CertEvent
     parsed: ParsedDomain
@@ -44,17 +36,7 @@ class ScoreResult:
 
 
 class Scorer:
-    """Run a parsed domain through every rule and sum the points.
-
-    A rule is a callable ``(ParsedDomain, CertEvent) -> (int, str)``.
-    A rule that raises an exception is skipped and logged so that the
-    pipeline is never interrupted.
-
-    Args:
-        threshold: Minimum score for a domain to be considered suspicious.
-        rules: Rules to apply, in order (``DEFAULT_RULES`` by default).
-        parser: FQDN parser to use.
-    """
+    """Run each rule on a parsed domain and sum the points. Failing rules are logged and skipped."""
 
     def __init__(
         self,
@@ -67,14 +49,7 @@ class Scorer:
         self._parser = parser or DomainParser()
 
     def evaluate(self, event: CertEvent) -> ScoreResult:
-        """Compute the score of an event.
-
-        Args:
-            event: Event coming from the ingestion queue.
-
-        Returns:
-            A ``ScoreResult`` holding the total score and the reasons.
-        """
+        """Score an event with every rule."""
         parsed = self._parser.parse(event.domain)
         result = ScoreResult(event=event, parsed=parsed)
 
@@ -93,12 +68,5 @@ class Scorer:
         return result
 
     def is_suspicious(self, result: ScoreResult) -> bool:
-        """Tell whether the score reaches the alert threshold.
-
-        Args:
-            result: Verdict returned by ``evaluate``.
-
-        Returns:
-            True if ``result.score >= threshold``.
-        """
+        """Return True if the score reaches the threshold."""
         return result.score >= self.threshold

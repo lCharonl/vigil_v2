@@ -7,15 +7,7 @@ from dataclasses import dataclass, field
 
 @dataclass(frozen=True, slots=True)
 class CertEvent:
-    """Normalized event representing one domain extracted from a certificate.
-
-    Attributes:
-        domain: Lowercase FQDN, without wildcard prefix or trailing dot.
-        issuer: Organization (or CN as fallback) of the issuing authority.
-        serial: Certificate serial number.
-        is_precert: True if the entry comes from a precertificate.
-        seen_at: Unix timestamp of when the event was received.
-    """
+    """One domain extracted from a certificate (lowercase, no wildcard)."""
 
     domain: str
     issuer: str
@@ -25,30 +17,14 @@ class CertEvent:
 
 
 class QueueManager:
-    """Wrap a bounded ``asyncio.Queue`` of ``CertEvent`` objects.
-
-    The CertStream feed can exceed the engine's processing capacity. Rather
-    than blocking the WebSocket read loop, excess events are discarded and
-    counted in ``dropped``.
-
-    Args:
-        maxsize: Maximum queue capacity (0 for unbounded).
-    """
+    """Bounded ``asyncio.Queue`` of events; excess events are dropped and counted."""
 
     def __init__(self, maxsize: int = 10000) -> None:
         self._queue: asyncio.Queue[CertEvent] = asyncio.Queue(maxsize=maxsize)
         self.dropped = 0
 
     def publish(self, event: CertEvent) -> bool:
-        """Push an event without blocking.
-
-        Args:
-            event: Event to hand over to the engine.
-
-        Returns:
-            True if the event was accepted, False if it was discarded
-            because the queue was full.
-        """
+        """Push an event without blocking; return False if the queue is full."""
         try:
             self._queue.put_nowait(event)
         except asyncio.QueueFull:
@@ -57,17 +33,17 @@ class QueueManager:
         return True
 
     async def get(self) -> CertEvent:
-        """Wait for and return the next available event."""
+        """Wait for the next event."""
         return await self._queue.get()
 
     def task_done(self) -> None:
-        """Signal that the previously retrieved event has been processed."""
+        """Mark the last retrieved event as processed."""
         self._queue.task_done()
 
     def qsize(self) -> int:
-        """Return the number of events currently waiting."""
+        """Return the number of pending events."""
         return self._queue.qsize()
 
     async def join(self) -> None:
-        """Wait until every queued event has been processed."""
+        """Wait until all queued events are processed."""
         await self._queue.join()

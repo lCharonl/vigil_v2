@@ -15,17 +15,7 @@ DEFAULT_URL = os.environ.get("CERTSTREAM_URL", "ws://localhost:8080/")
 
 
 class CertstreamClient:
-    """WebSocket client that feeds the event queue.
-
-    The client reconnects automatically after a disconnection. Each
-    ``certificate_update`` message is cleaned and split into one
-    ``CertEvent`` per domain found in the certificate.
-
-    Args:
-        queue: Queue to which events are published.
-        url: CertStream server URL.
-        reconnect_delay: Delay in seconds before a new connection attempt.
-    """
+    """WebSocket client that publishes one ``CertEvent`` per certificate domain, with auto-reconnect."""
 
     def __init__(
         self,
@@ -38,7 +28,7 @@ class CertstreamClient:
         self._reconnect_delay = reconnect_delay
 
     async def run(self) -> None:
-        """Run the infinite ingestion loop with automatic reconnection."""
+        """Ingest forever, reconnecting after each disconnection."""
         while True:
             try:
                 await self._consume()
@@ -51,7 +41,7 @@ class CertstreamClient:
             await asyncio.sleep(self._reconnect_delay)
 
     async def _consume(self) -> None:
-        """Open the connection and publish events until it drops."""
+        """Publish events until the connection drops."""
         async with websockets.connect(self._url) as ws:
             logger.info("Connected to %s", self._url)
             async for raw in ws:
@@ -60,14 +50,7 @@ class CertstreamClient:
 
     @staticmethod
     def clean_domain(domain: str) -> str:
-        """Normalize a domain name taken from a certificate.
-
-        Args:
-            domain: Raw name (may contain a wildcard or a trailing dot).
-
-        Returns:
-            The lowercase domain, without leading ``*.`` or trailing dot.
-        """
+        """Lowercase a domain and strip ``*.`` and the trailing dot."""
         domain = domain.strip().lower().rstrip(".")
         if domain.startswith("*."):
             domain = domain[2:]
@@ -75,15 +58,7 @@ class CertstreamClient:
 
     @classmethod
     def parse_message(cls, raw: str | bytes) -> list[CertEvent]:
-        """Convert a raw CertStream message into normalized events.
-
-        Args:
-            raw: JSON message received on the WebSocket.
-
-        Returns:
-            A list of deduplicated events, empty if the message is invalid,
-            of another type, or concerns a CA certificate.
-        """
+        """Convert a raw message into deduplicated events; empty if invalid or CA."""
         try:
             msg = json.loads(raw)
         except (json.JSONDecodeError, UnicodeDecodeError):

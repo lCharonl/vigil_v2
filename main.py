@@ -5,6 +5,7 @@ import asyncio
 import logging
 
 from src.core.queue_manager import QueueManager
+from src.engine.rules_brand import load_brand_index, load_typosquat_index
 from src.engine.scorer import Scorer
 from src.ingestion.certstream_ws import DEFAULT_URL, CertstreamClient
 from src.output.dispatcher import AlertDispatcher
@@ -19,14 +20,7 @@ async def engine_worker(
     formatter: AlertFormatter,
     dispatcher: AlertDispatcher,
 ) -> None:
-    """Consume the queue, score each domain and emit alerts.
-
-    Args:
-        queue: Queue fed by the ingestion layer.
-        scorer: Scoring engine.
-        formatter: Alert formatter.
-        dispatcher: Alert destination.
-    """
+    """Consume the queue, score each domain and dispatch alerts."""
     while True:
         event = await queue.get()
         try:
@@ -40,23 +34,16 @@ async def engine_worker(
 
 
 async def stats_reporter(queue: QueueManager, interval: float) -> None:
-    """Periodically log the queue state.
-
-    Args:
-        queue: Queue to monitor.
-        interval: Delay in seconds between two reports.
-    """
+    """Log the queue size and drop count every ``interval`` seconds."""
     while True:
         await asyncio.sleep(interval)
         logger.info("queue=%d dropped=%d", queue.qsize(), queue.dropped)
 
 
 async def run(args: argparse.Namespace) -> None:
-    """Initialize the components and start the concurrent tasks.
-
-    Args:
-        args: Parsed command-line arguments.
-    """
+    """Initialize the components and run the concurrent tasks."""
+    await asyncio.to_thread(load_brand_index)
+    await asyncio.to_thread(load_typosquat_index)
     queue = QueueManager(maxsize=args.queue_size)
     scorer = Scorer(threshold=args.threshold)
     formatter = AlertFormatter()
@@ -84,11 +71,7 @@ async def run(args: argparse.Namespace) -> None:
 
 
 def parse_args() -> argparse.Namespace:
-    """Parse command-line arguments.
-
-    Returns:
-        The Vigil runtime parameters.
-    """
+    """Parse command-line arguments."""
     parser = argparse.ArgumentParser(description="Vigil V2 - phishing detection from the CertStream feed")
     parser.add_argument("--url", default=DEFAULT_URL, help="CertStream server URL")
     parser.add_argument("--threshold", type=int, default=50, help="minimum score to raise an alert")

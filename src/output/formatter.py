@@ -7,19 +7,11 @@ from src.engine.scorer import ScoreResult
 
 
 class AlertFormatter:
-    """Turn a ``ScoreResult`` into a serializable alert."""
+    """Turn a ``ScoreResult`` into an alert."""
 
     @staticmethod
     def to_dict(result: ScoreResult) -> dict:
-        """Build the alert dictionary.
-
-        Args:
-            result: Engine verdict for one domain.
-
-        Returns:
-            A JSON-compatible dictionary describing the domain, the score,
-            the reasons and the certificate metadata.
-        """
+        """Build the JSON-compatible alert dictionary."""
         event = result.event
         parsed = result.parsed
         return {
@@ -37,12 +29,5 @@ class AlertFormatter:
 
     @classmethod
     def to_json(cls, result: ScoreResult) -> str:
-        """Serialize the alert as a single JSON line.
-
-        Args:
-            result: Engine verdict for one domain.
-
-        Returns:
-            A compact JSON string with no trailing newline.
-        """
+        """Serialize the alert as one compact JSON line."""
         return json.dumps(cls.to_dict(result), ensure_ascii=False)
