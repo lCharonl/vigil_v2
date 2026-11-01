@@ -3,4 +3,6 @@
 # Use single quotes so backslashes are kept as-is.
 version: 1
 patterns:
-- '(^|\.)(admin-)?(rs-)?mcas(-df)?\.ms$'
+- '(^|\.)(admin-)?(rs-)?mcas(-df)?(\.ms|-gov\.us)$'
+- '\.azuremonitor\.trafficmanager\.cn$'
+- '^azuregateway-[0-9a-f-]+\.cloudapp\.net$'
