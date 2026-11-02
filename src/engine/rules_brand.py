@@ -87,7 +87,7 @@ def load_typosquat_index() -> dict[str, TyposquatMatch]:
     return index
 
 
-def _is_legit_domain(fqdn: str, legit_domains: frozenset[str]) -> bool:
+def is_legit_domain(fqdn: str, legit_domains: frozenset[str]) -> bool:
     """Tell whether an FQDN is, or sits under, an official domain."""
     labels = fqdn.split(".")
     return any(".".join(labels[i:]) in legit_domains for i in range(len(labels)))
@@ -100,7 +100,7 @@ def check_allowlist(parsed: ParsedDomain, event: CertEvent) -> tuple[int, str]:
 
 def check_typosquatting(parsed: ParsedDomain, event: CertEvent) -> tuple[int, str]:
     """Match the FQDN or a parent domain against known typosquatting variants."""
-    if _is_legit_domain(parsed.fqdn, load_brand_index().legit_domains):
+    if is_legit_domain(parsed.fqdn, load_brand_index().legit_domains):
         return 0, ""
 
     variants = load_typosquat_index()
@@ -124,7 +124,7 @@ def check_brand_in_subdomain(parsed: ParsedDomain, event: CertEvent) -> tuple[in
         return 0, ""
 
     index = load_brand_index()
-    if _is_legit_domain(parsed.fqdn, index.legit_domains):
+    if is_legit_domain(parsed.fqdn, index.legit_domains):
         return 0, ""
 
     subdomain = parsed.subdomain.lower()
