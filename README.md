@@ -50,7 +50,7 @@ vigil_v2/
 | `QueueManager` | Enveloppe une `asyncio.Queue` bornée. `publish()` ne bloque jamais : si la file est pleine, l'événement est abandonné et compté dans `dropped`. |
 | `CertstreamClient` | Se connecte au WebSocket, reconnexion automatique, ignore les certificats CA, retire les `*.`, dédoublonne, publie un `CertEvent` par domaine. |
 | `DomainParser` | Retourne un `ParsedDomain` (`fqdn`, `subdomain`, `root`, `suffix`). Utilise la liste de suffixes embarquée de `tldextract`, sans accès réseau. |
-| Données | `src/data/brands_legits_domain.yaml` (marques et domaines officiels) est chargé une fois par `rules_brand.py` (heuristique `check_brand_in_subdomain`). `src/data/brands_typosquats.yaml`, généré par `scripts/generate_typosquats.py`, alimente `check_typosquatting`. |
+| Données | `src/data/brands_legits_domain.yaml` (marques et domaines officiels) est chargé une fois par `rules_brand.py` (heuristique `check_brand_in_subdomain`). `src/data/brands_typosquats.yaml`, généré par `scripts/generate_typosquats.py`, alimente `check_typosquatting`. `src/data/phishing_keywords.yaml` alimente `check_keywords` : mots-clés `strong` (15 pts), `weak` (5 pts) et `compounds` (25 pts, suites de tokens ou forme collée), comparés aux tokens du FQDN ; les points de la racine comptent double, total plafonné à 40, rien sous un domaine officiel. |
 | `Scorer` | Applique chaque règle du registre, additionne les points, collecte les raisons. Une règle qui lève une exception est ignorée et journalisée. |
 | `AlertFormatter` / `AlertDispatcher` | Sérialisation JSON, puis écriture sur stdout et/ou dans un fichier (JSON Lines). |
 
