@@ -4,17 +4,21 @@ import asyncio
 import sys
 from pathlib import Path
 
+from src.output.archiver import AlertArchiver
+
 
 class AlertDispatcher:
-    """Write alerts to stdout and/or a JSON Lines file (written in a thread)."""
+    """Write alerts to stdout, a JSON Lines file and/or the hourly archive."""
 
     def __init__(
         self,
         file_path: str | Path | None = None,
         to_terminal: bool = True,
+        archiver: AlertArchiver | None = None,
     ) -> None:
         self._file_path = Path(file_path) if file_path else None
         self._to_terminal = to_terminal
+        self._archiver = archiver
         self._lock = asyncio.Lock()
 
     async def dispatch(self, alert: str) -> None:
@@ -24,6 +28,8 @@ class AlertDispatcher:
         if self._file_path is not None:
             async with self._lock:
                 await asyncio.to_thread(self._append, alert)
+        if self._archiver is not None:
+            await self._archiver.write(alert)
 
     def _append(self, alert: str) -> None:
         """Append one line to the output file."""

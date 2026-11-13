@@ -85,6 +85,9 @@ python main.py --url ws://localhost:8080/ --threshold 50 --output-file alerts.js
 | `--url` | `$CERTSTREAM_URL` ou `ws://localhost:8080/` | Serveur CertStream |
 | `--threshold` | `50` | Score minimal pour émettre une alerte |
 | `--output-file` | aucun | Fichier JSON Lines en plus du terminal |
+| `--archive` | désactivé | Active l'archivage (rotation horaire, zip quotidien, purge) |
+| `--archive-dir` | `archive` | Dossier racine de l'archive |
+| `--archive-retention-days` | `30` | Nombre de jours de zips conservés |
 | `--queue-size` | `10000` | Capacité de la file |
 | `--workers` | `1` | Nombre de consommateurs du moteur |
 | `--stats-interval` | `60` | Période des logs de statistiques (s) |
@@ -97,6 +100,24 @@ Tant que les heuristiques sont vides, tous les scores valent 0 et aucune alerte 
 ```json
 {"timestamp": "2026-10-30T11:00:00+00:00", "domain": "login.paypa1-secure.xyz", "root": "paypa1-secure", "subdomain": "login", "tld": "xyz", "score": 80, "reasons": ["typosquatting: paypal"], "issuer": "Let's Encrypt", "serial": "04AB...", "cert_type": "X509"}
 ```
+
+## Archivage
+
+Avec `--archive`, chaque alerte est aussi ajoutée à un fichier horaire (heure UTC) :
+
+```
+archive/
+├── 2026-11-13/            jour en cours
+│   ├── 14.jsonl
+│   └── 15.jsonl
+├── 2026-11-12.zip         jour terminé : un HH.jsonl par entrée
+└── 2026-11-11.zip
+```
+
+- Une fois un jour terminé, son dossier est compressé en `YYYY-MM-DD.zip` puis supprimé.
+- Les zips plus anciens que `--archive-retention-days` (30 par défaut) sont supprimés.
+- La maintenance (zip et purge) s'exécute au démarrage, ce qui rattrape les jours restés en dossier après un arrêt, puis toutes les heures.
+- Indépendant de `--output-file` : les deux peuvent être utilisés ensemble. Sans `--archive`, rien n'est créé.
 
 ## Conventions de code
 
