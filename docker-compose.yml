@@ -1,0 +1,27 @@
+services:
+  certstream:
+    image: ghcr.io/d-rickyy-b/certstream-server-go:latest
+    restart: unless-stopped
+
+  vigil:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - certstream
+    environment:
+      CERTSTREAM_URL: ws://certstream:8080/
+    command:
+      - --threshold
+      - "${VIGIL_THRESHOLD:-50}"
+      - --workers
+      - "${VIGIL_WORKERS:-1}"
+      - --output-file
+      - /data/alerts.jsonl
+      - --archive
+      - --archive-dir
+      - /data/archive
+    volumes:
+      - vigil-data:/data
+
+volumes:
+  vigil-data:
