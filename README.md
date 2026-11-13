@@ -95,6 +95,22 @@ python main.py --url ws://localhost:8080/ --threshold 50 --output-file alerts.js
 
 Tant que les heuristiques sont vides, tous les scores valent 0 et aucune alerte n'est émise (sauf avec `--threshold 0`, pratique pour tester le pipeline de bout en bout).
 
+## Docker
+
+```bash
+docker compose up -d --build
+docker compose logs -f vigil
+```
+
+`docker-compose.yml` lance deux services : `certstream` (certstream-server-go) et `vigil`, qui s'y connecte via `CERTSTREAM_URL=ws://certstream:8080/`. Les alertes (`alerts.jsonl`) et l'archive (`archive/`) sont écrites dans le volume `vigil-data`, monté sur `/data`. Le seuil et le nombre de workers se règlent avec `VIGIL_THRESHOLD` et `VIGIL_WORKERS` :
+
+```bash
+VIGIL_THRESHOLD=0 docker compose up -d
+docker compose exec vigil tail -f /data/alerts.jsonl
+```
+
+Pour utiliser un serveur CertStream existant, lancer seulement l'image : `docker build -t vigil . && docker run --rm -v vigil-data:/data vigil --url ws://hote:8080/ --output-file /data/alerts.jsonl`.
+
 ## Format d'une alerte
 
 ```json

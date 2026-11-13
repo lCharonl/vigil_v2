@@ -1,0 +1,11 @@
+.git
+.venv
+__pycache__
+*.pyc
+.env
+alerts.jsonl
+archive
+tmp
+doc
+scripts
+*.md
