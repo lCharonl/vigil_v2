@@ -1343,6 +1343,7 @@ brands:
   - salesforce.com
   - crm.dev
   - force.com
+  - my-salesforce.com
 - brand: SAP
   domains:
   - sap.com
