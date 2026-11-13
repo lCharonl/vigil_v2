@@ -1,0 +1,23 @@
+services:
+  vigil:
+    build: .
+    restart: unless-stopped
+    environment:
+      CERTSTREAM_URL: ${CERTSTREAM_URL:-ws://host.docker.internal:8080/}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command:
+      - --threshold
+      - "${VIGIL_THRESHOLD:-50}"
+      - --workers
+      - "${VIGIL_WORKERS:-1}"
+      - --output-file
+      - /data/alerts.jsonl
+      - --archive
+      - --archive-dir
+      - /data/archive
+    volumes:
+      - vigil-data:/data
+
+volumes:
+  vigil-data:

@@ -1,8 +1,8 @@
-# Referentiel de marques et domaines officiels de reference.
-# Derive des 500 entrees de la liste precedente (doublons fusionnes).
-# Non exhaustif ; les domaines ne sont pas tous verifies independamment.
-# Ne pas utiliser comme liste blanche de securite sans validation specifique.
-# Les domaines listes peuvent appartenir a la meme maison mere.
+# Reference list of brands and their official domains.
+# Derived from the 500 entries of the previous list (duplicates merged).
+# Not exhaustive; domains have not all been independently verified.
+# Do not use as a security whitelist without specific validation.
+# Listed domains may belong to the same parent company.
 brands:
 - brand: Microsoft
   domains:
@@ -534,6 +534,7 @@ brands:
 - brand: Cloudflare
   domains:
   - cloudflare.com
+  - cloudflare.app
   - workers.dev
   - pages.dev
 - brand: Verizon
